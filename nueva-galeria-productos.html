@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Moderna de Productos</title>
+    <style>
+        :root {
+            /* Paleta de colores única */
+            --color-primario: #4a148c;
+            --color-secundario: #ff6f00;
+            --color-fondo: #f5f5f5;
+            --color-superficie: #ffffff;
+            --color-texto: #212121;
+            --color-texto-secundario: #757575;
+            
+            /* Tipografía fluida */
+            --fuente-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+            --fuente-sm: clamp(0.875rem, 2vw, 1rem);
+            --fuente-base: clamp(1rem, 2.5vw, 1.125rem);
+            --fuente-lg: clamp(1.125rem, 3vw, 1.25rem);
+            --fuente-xl: clamp(1.25rem, 3.5vw, 1.5rem);
+            --fuente-2xl: clamp(1.5rem, 4vw, 2rem);
+            
+            /* Espaciado fluido */
+            --espacio-xs: clamp(0.25rem, 1vw, 0.5rem);
+            --espacio-sm: clamp(0.5rem, 2vw, 1rem);
+            --espacio-md: clamp(1rem, 3vw, 1.5rem);
+            --espacio-lg: clamp(1.5rem, 4vw, 2rem);
+            --espacio-xl: clamp(2rem, 5vw, 3rem);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+            padding: var(--espacio-md);
+        }
+
+        .contenedor {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .cabecera {
+            text-align: center;
+            margin-bottom: var(--espacio-xl);
+            padding-bottom: var(--espacio-md);
+            border-bottom: 2px solid var(--color-primario);
+        }
+
+        .titulo-principal {
+            font-size: var(--fuente-2xl);
+            color: var(--color-primario);
+            margin-bottom: var(--espacio-sm);
+        }
+
+        .subtitulo {
+            font-size: var(--fuente-lg);
+            color: var(--color-texto-secundario);
+        }
+
+        /* Galería */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--espacio-lg);
+            margin-bottom: var(--espacio-xl);
+        }
+
+        .producto {
+            background: var(--color-superficie);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .producto-imagen {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .producto-contenido {
+            padding: var(--espacio-md);
+        }
+
+        .producto-titulo {
+            font-size: var(--fuente-lg);
+            margin-bottom: var(--espacio-xs);
+        }
+
+        .producto-descripcion {
+            font-size: var(--fuente-sm);
+            color: var(--color-texto-secundario);
+            margin-bottom: var(--espacio-md);
+        }
+
+        .producto-precio {
+            font-size: var(--fuente-xl);
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+
+        /* Footer */
+        .pie-pagina {
+            text-align: center;
+            padding: var(--espacio-md) 0;
+            border-top: 1px solid var(--color-texto-secundario);
+            font-size: var(--fuente-sm);
+            color: var(--color-texto-secundario);
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="cabecera">
+            <h1 class="titulo-principal">Galería Moderna</h1>
+            <p class="subtitulo">Productos seleccionados con diseño adaptativo</p>
+        </header>
+
+        <main>
+            <div class="galeria">
+                <article class="producto">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Auriculares inalámbricos" class="producto-imagen">
+                    <div class="producto-contenido">
+                        <h2 class="producto-titulo">Auriculares Premium</h2>
+                        <p class="producto-descripcion">Auriculares inalámbricos con cancelación de ruido y 20 horas de batería.</p>
+                        <p class="producto-precio">$99.99</p>
+                    </div>
+                </article>
+
+                <article class="producto">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Reloj inteligente" class="producto-imagen">
+                    <div class="producto-contenido">
+                        <h2 class="producto-titulo">Smartwatch Elite</h2>
+                        <p class="producto-descripcion">Reloj inteligente con monitor cardíaco y GPS integrado.</p>
+                        <p class="producto-precio">$79.99</p>
+                    </div>
+                </article>
+
+                <article class="producto">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cámara digital" class="producto-imagen">
+                    <div class="producto-contenido">
+                        <h2 class="producto-titulo">Cámara 4K Pro</h2>
+                        <p class="producto-descripcion">Cámara digital con grabación en 4K y estabilizador de imagen.</p>
+                        <p class="producto-precio">$129.99</p>
+                    </div>
+                </article>
+
+                <article class="producto">
+                    <img src="https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Altavoz inteligente" class="producto-imagen">
+                    <div class="producto-contenido">
+                        <h2 class="producto-titulo">Altavoz Inteligente</h2>
+                        <p class="producto-descripcion">Altavoz con asistente virtual y sonido envolvente de alta fidelidad.</p>
+                        <p class="producto-precio">$149.99</p>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <footer class="pie-pagina">
+            <p>Galería Moderna de Productos</p>
+        </footer>
+    </div>
+</body>
+</html>
